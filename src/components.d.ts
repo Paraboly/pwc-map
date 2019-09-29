@@ -10,8 +10,8 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface PwcMap {
-    'config': string;
-    'map': string;
+    'config': Object;
+    'map': Object;
   }
 }
 
@@ -30,8 +30,8 @@ declare global {
 
 declare namespace LocalJSX {
   interface PwcMap {
-    'config'?: string;
-    'map'?: string;
+    'config'?: Object;
+    'map'?: Object;
   }
 
   interface IntrinsicElements {

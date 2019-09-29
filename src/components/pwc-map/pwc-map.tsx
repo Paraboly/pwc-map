@@ -1,20 +1,20 @@
-import { Component, Prop, h } from "@stencil/core";
-import { format } from "../../utils/utils";
-
+import { Element, Component, Prop, h } from "@stencil/core";
+import { MapFactory } from "../core/module";
 @Component({
   tag: "pwc-map",
-  styleUrl: "pwc-map.css",
-  shadow: true
+  styleUrls: ["./pwc-map.css", "leaflet/dist/leaflet.css"]
 })
 export class Map {
-  @Prop() map: string;
-  @Prop() config: string;
+  @Element() private element: HTMLElement;
+  @Prop() map: Object;
+  @Prop() config: Object;
 
-  private getProps(): string {
-    return format(this.map, this.config);
+  componentWillLoad() {}
+  componentDidLoad() {
+    this.map = MapFactory.getOne({ target: this.element });
   }
 
   render() {
-    return <div>OMG, its amazing {this.getProps()}</div>;
+    return <div></div>;
   }
 }
