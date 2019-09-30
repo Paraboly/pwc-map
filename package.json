@@ -1,5 +1,5 @@
 {
-  "name": "@pwc/map",
+  "name": "@schemesonic/map",
   "version": "0.0.1",
   "description": "Paraboly Web Components: @Map: renders leaflet, openlayer and mapbox.",
   "main": "dist/index.js",

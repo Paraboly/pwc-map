@@ -2,7 +2,7 @@ import { Element, Component, Prop, h } from "@stencil/core";
 import { MapFactory } from "../core/module";
 @Component({
   tag: "pwc-map",
-  styleUrls: ["./pwc-map.css", "leaflet/dist/leaflet.css"]
+  styleUrls: ["./pwc-map.css"]
 })
 export class Map {
   @Element() private element: HTMLElement;

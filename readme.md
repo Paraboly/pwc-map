@@ -10,14 +10,9 @@ npm 6+
 
 ### Installing
 
-```$npm install --save "@pwc/map"```
+Add following script to your index.html head section
 
-
-commonJS:
-```import @pwc/map``` 
-or
-requireJS:
-```require "@pwc/map"```
+```<script src='https://unpkg.com/@schemesonic/map@0.0.1/dist/pwcmap.js'></script>```
 
 Configuring the initial setup:
 ``` 
