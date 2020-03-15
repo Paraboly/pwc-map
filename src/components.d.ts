@@ -11,12 +11,30 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface PwcMap {
+    /**
+    * Map config, currently MapboxGL.JS config
+    */
     'config': Object;
+    'getMap': () => Promise<Object>;
+    /**
+    * Map reference
+    */
     'map': Object;
+    /**
+    * Current type is mapbox, later could be extend to leaflet
+    */
     'type': string;
   }
+<<<<<<< HEAD
   interface PwcMapCorona {
     'config': any;
+=======
+  interface PwcMapGeojsonLayer {
+    /**
+    * geojson formatted data source to be drawn on map
+    */
+    'geojson': { type: string; geometry: { type: string; coordinates: number[][][]; }; };
+>>>>>>> mapboxgl
   }
 }
 
@@ -29,6 +47,7 @@ declare global {
     new (): HTMLPwcMapElement;
   };
 
+<<<<<<< HEAD
   interface HTMLPwcMapCoronaElement extends Components.PwcMapCorona, HTMLStencilElement {}
   var HTMLPwcMapCoronaElement: {
     prototype: HTMLPwcMapCoronaElement;
@@ -37,22 +56,53 @@ declare global {
   interface HTMLElementTagNameMap {
     'pwc-map': HTMLPwcMapElement;
     'pwc-map-corona': HTMLPwcMapCoronaElement;
+=======
+  interface HTMLPwcMapGeojsonLayerElement extends Components.PwcMapGeojsonLayer, HTMLStencilElement {}
+  var HTMLPwcMapGeojsonLayerElement: {
+    prototype: HTMLPwcMapGeojsonLayerElement;
+    new (): HTMLPwcMapGeojsonLayerElement;
+  };
+  interface HTMLElementTagNameMap {
+    'pwc-map': HTMLPwcMapElement;
+    'pwc-map-geojson-layer': HTMLPwcMapGeojsonLayerElement;
+>>>>>>> mapboxgl
   }
 }
 
 declare namespace LocalJSX {
   interface PwcMap {
+    /**
+    * Map config, currently MapboxGL.JS config
+    */
     'config'?: Object;
+    /**
+    * Map reference
+    */
     'map'?: Object;
+    /**
+    * Current type is mapbox, later could be extend to leaflet
+    */
     'type'?: string;
   }
+<<<<<<< HEAD
   interface PwcMapCorona {
     'config'?: any;
+=======
+  interface PwcMapGeojsonLayer {
+    /**
+    * geojson formatted data source to be drawn on map
+    */
+    'geojson'?: { type: string; geometry: { type: string; coordinates: number[][][]; }; };
+>>>>>>> mapboxgl
   }
 
   interface IntrinsicElements {
     'pwc-map': PwcMap;
+<<<<<<< HEAD
     'pwc-map-corona': PwcMapCorona;
+=======
+    'pwc-map-geojson-layer': PwcMapGeojsonLayer;
+>>>>>>> mapboxgl
   }
 }
 
@@ -63,7 +113,11 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pwc-map': LocalJSX.PwcMap & JSXBase.HTMLAttributes<HTMLPwcMapElement>;
+<<<<<<< HEAD
       'pwc-map-corona': LocalJSX.PwcMapCorona & JSXBase.HTMLAttributes<HTMLPwcMapCoronaElement>;
+=======
+      'pwc-map-geojson-layer': LocalJSX.PwcMapGeojsonLayer & JSXBase.HTMLAttributes<HTMLPwcMapGeojsonLayerElement>;
+>>>>>>> mapboxgl
     }
   }
 }
