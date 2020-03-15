@@ -25,7 +25,10 @@ export class MapGeojsonLayer {
 
   draw(map) {
     map.on('load', () => {
-      map.addSource('maine', this.geojson);
+      map.addSource('maine', {
+        type: 'geojson',
+        data: this.geojson
+      });
       map.addLayer({
         'id': 'maine',
         'type': 'fill',

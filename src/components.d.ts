@@ -11,9 +11,25 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface PwcMap {
+    /**
+    * Map config, currently MapboxGL.JS config
+    */
     'config': Object;
+    'getMap': () => Promise<Object>;
+    /**
+    * Map reference
+    */
     'map': Object;
+    /**
+    * Current type is mapbox, later could be extend to leaflet
+    */
     'type': string;
+  }
+  interface PwcMapGeojsonLayer {
+    /**
+    * geojson formatted data source to be drawn on map
+    */
+    'geojson': { type: string; geometry: { type: string; coordinates: number[][][]; }; };
   }
 }
 
@@ -25,20 +41,43 @@ declare global {
     prototype: HTMLPwcMapElement;
     new (): HTMLPwcMapElement;
   };
+
+  interface HTMLPwcMapGeojsonLayerElement extends Components.PwcMapGeojsonLayer, HTMLStencilElement {}
+  var HTMLPwcMapGeojsonLayerElement: {
+    prototype: HTMLPwcMapGeojsonLayerElement;
+    new (): HTMLPwcMapGeojsonLayerElement;
+  };
   interface HTMLElementTagNameMap {
     'pwc-map': HTMLPwcMapElement;
+    'pwc-map-geojson-layer': HTMLPwcMapGeojsonLayerElement;
   }
 }
 
 declare namespace LocalJSX {
   interface PwcMap {
+    /**
+    * Map config, currently MapboxGL.JS config
+    */
     'config'?: Object;
+    /**
+    * Map reference
+    */
     'map'?: Object;
+    /**
+    * Current type is mapbox, later could be extend to leaflet
+    */
     'type'?: string;
+  }
+  interface PwcMapGeojsonLayer {
+    /**
+    * geojson formatted data source to be drawn on map
+    */
+    'geojson'?: { type: string; geometry: { type: string; coordinates: number[][][]; }; };
   }
 
   interface IntrinsicElements {
     'pwc-map': PwcMap;
+    'pwc-map-geojson-layer': PwcMapGeojsonLayer;
   }
 }
 
@@ -49,6 +88,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pwc-map': LocalJSX.PwcMap & JSXBase.HTMLAttributes<HTMLPwcMapElement>;
+      'pwc-map-geojson-layer': LocalJSX.PwcMapGeojsonLayer & JSXBase.HTMLAttributes<HTMLPwcMapGeojsonLayerElement>;
     }
   }
 }
