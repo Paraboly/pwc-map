@@ -1,4 +1,4 @@
-import { Element, Component, Prop, h } from "@stencil/core";
+import { Element, Component, Prop, h, Method } from "@stencil/core";
 import MapboxService from "./mapbox/mapbox.service";
 
 @Component({
@@ -7,11 +7,32 @@ import MapboxService from "./mapbox/mapbox.service";
 })
 export class Map {
   @Element() private element: HTMLElement;
-  @Prop() map: Object;
-  @Prop() config: Object;
+  /**
+   * Current type is mapbox, later could be extend to leaflet
+   */
   @Prop() type = "mapbox";
 
-  componentWillLoad() { }
+  /**
+   * Map reference
+   */
+  @Prop() map: Object;
+  /**
+   * Map config, currently MapboxGL.JS config
+   */
+  @Prop() config: Object;
+  @Method()
+  async getMap() {
+    if (!this.map) {
+      console.warn("Map is not initialized, cannot get map");
+      return;
+    }
+
+    return this.map;
+  }
+
+  componentWillLoad() {
+
+  }
   componentDidLoad() {
     this.map = MapboxService.getOne({ container: this.element }, "BUILDING");
   }
