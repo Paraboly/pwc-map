@@ -8,10 +8,10 @@ export default class MapboxService {
     {
       container,
       style = "mapbox://styles/mapbox/light-v10",
-      center = [32.7758598, 39.8974598],
-      zoom = 17.5,
+      center = [32.7736711, 39.8974639],
+      zoom = 1,
       pitch = 45,
-      bearing = -17.6,
+      bearing = 0,
       antialias = true
     },
     layer = "BUILDING"
