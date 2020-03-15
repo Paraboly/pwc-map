@@ -49,4 +49,8 @@ const MOCK_ANIMATION_DATA = {
     pitch: 20
   }
 };
+
+export const COVID_19 = JSON.parse(
+  '{"lastChecked":"2020-03-15T16:02:35.908Z","covid19Stats":[{"province":"","country":"Italy","lastUpdate":"2020-03-14T20:13:16","confirmed":21157,"deaths":1441,"recovered":1966}]}'
+);
 export default MOCK_ANIMATION_DATA;

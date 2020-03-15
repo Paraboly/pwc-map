@@ -1,6 +1,7 @@
 import { Component, Host, h, Element, Prop } from '@stencil/core';
 import CustomAnimationsService from "./animations/custom-animations.service";
 import PWCMapUtils from '../pwc-map/services/pwc-map-utils.service';
+import { COVID_19 } from './animations/animations.mock';
 @Component({
   tag: 'pwc-map-corona',
   styleUrl: 'corona.css',
@@ -27,7 +28,7 @@ export class MapCorona {
       }
     }
 
-
+    console.log(COVID_19);
     CustomAnimationsService.startFlyingStories(map, this.config);
   }
 
