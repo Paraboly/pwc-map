@@ -15,6 +15,9 @@ export namespace Components {
     'map': Object;
     'type': string;
   }
+  interface PwcMapCorona {
+    'config': any;
+  }
 }
 
 declare global {
@@ -25,8 +28,15 @@ declare global {
     prototype: HTMLPwcMapElement;
     new (): HTMLPwcMapElement;
   };
+
+  interface HTMLPwcMapCoronaElement extends Components.PwcMapCorona, HTMLStencilElement {}
+  var HTMLPwcMapCoronaElement: {
+    prototype: HTMLPwcMapCoronaElement;
+    new (): HTMLPwcMapCoronaElement;
+  };
   interface HTMLElementTagNameMap {
     'pwc-map': HTMLPwcMapElement;
+    'pwc-map-corona': HTMLPwcMapCoronaElement;
   }
 }
 
@@ -36,9 +46,13 @@ declare namespace LocalJSX {
     'map'?: Object;
     'type'?: string;
   }
+  interface PwcMapCorona {
+    'config'?: any;
+  }
 
   interface IntrinsicElements {
     'pwc-map': PwcMap;
+    'pwc-map-corona': PwcMapCorona;
   }
 }
 
@@ -49,6 +63,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pwc-map': LocalJSX.PwcMap & JSXBase.HTMLAttributes<HTMLPwcMapElement>;
+      'pwc-map-corona': LocalJSX.PwcMapCorona & JSXBase.HTMLAttributes<HTMLPwcMapCoronaElement>;
     }
   }
 }
