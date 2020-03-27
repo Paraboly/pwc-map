@@ -1,7 +1,7 @@
 import { Component, Host, h, Element, Prop } from '@stencil/core';
 import CustomAnimationsService from "./animations/custom-animations.service";
 import PWCMapUtils from '../pwc-map/services/pwc-map-utils.service';
-import { COVID_19 } from './animations/animations.mock';
+import PWCMapCoronaService from './corona.service';
 @Component({
   tag: 'pwc-map-corona',
   styleUrl: 'corona.css',
@@ -27,9 +27,9 @@ export class MapCorona {
         console.error(error);
       }
     }
-
-    console.log(COVID_19);
-    CustomAnimationsService.startFlyingStories(map, this.config);
+    PWCMapCoronaService.getCOVID19StoryGeometry("China").then(() => {
+      CustomAnimationsService.startFlyingStories(map, this.config);
+    });
   }
 
   render() {
