@@ -1,22 +1,23 @@
 # @PWC/MAP
 
-PWC Map component is an abstraction on top of maps like leaflet, openlayers and mapbox. 
+PWC Map component is an abstraction on top of maps like mapboxGL, leaflet, openlayers.
 
 ## Getting Started
 
 ### Prerequisites
 
-npm 6+ 
+npm 6+
 
 ### Installing
 
 Add following script to your index.html head section
 
-```<script src='https://unpkg.com/@schemesonic/map@0.0.1/dist/pwcmap.js'></script>```
+`<script src='https://unpkg.com/@schemesonic/map@0.0.1/dist/pwcmap.js'></script>`
 
 Configuring the initial setup:
-``` 
-this.state = 
+
+```
+this.state =
   map: null,
   config: {}
 };
@@ -24,19 +25,19 @@ this.state =
 
 and finally use it in your html.
 
-```<pwc-map map="${this.state.map}" config="${this.state.config}"></pwc-map>```
+`<pwc-map map="${this.state.map}" config="${this.state.config}"></pwc-map>`
 
 ## Running the tests
 
-```$npm run test```
+`$npm run test`
 
 ## Built With
 
-* [StencilJS](https://stenciljs.com/)
+- [StencilJS](https://stenciljs.com/)
 
 ## Authors
 
-* *SchemeSonic* - [github](https://github.com/schemesonic)
+- _SchemeSonic_ - [github](https://github.com/schemesonic)
 
 See also the list of [contributors](https://github.com/paraboly/@pwc-map/contributors) who participated in this project.
 

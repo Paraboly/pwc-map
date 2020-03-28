@@ -1,7 +1,7 @@
 {
-  "name": "@schemesonic/map",
+  "name": "@paraboly/pwc-map",
   "version": "0.0.1",
-  "description": "Paraboly Web Components: @Map: renders leaflet, openlayer and mapbox.",
+  "description": "Paraboly Web Components: @Map: renders mapbox, leaflet and openlayers.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -23,12 +23,8 @@
   },
   "devDependencies": {
     "@stencil/core": "^1.8.11",
-    "@types/leaflet": "^1.5.9",
     "@types/mapbox-gl": "^1.8.0"
   },
-  "peerDependencies": {
-    "leaflet": "^1.6.0"
-  },
-  "license": "MIT",
-  "dependencies": {}
+  "peerDependencies": {},
+  "license": "MIT"
 }
