@@ -1,6 +1,6 @@
 {
   "name": "@paraboly/pwc-map",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Paraboly Web Components: @Map: renders mapbox, leaflet and openlayers.",
   "keywords": [
     "paraboly",
