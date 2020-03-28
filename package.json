@@ -1,7 +1,22 @@
 {
   "name": "@paraboly/pwc-map",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Paraboly Web Components: @Map: renders mapbox, leaflet and openlayers.",
+  "keywords": [
+    "paraboly",
+    "stencil",
+    "stenciljs",
+    "web-component",
+    "webcomponent",
+    "ui",
+    "frontend",
+    "mapbox",
+    "map"
+  ],
+  "homepage": "https://www.paraboly.com",
+  "bugs": "https://github.com/Paraboly/pwc-map/issues",
+  "repository": "git@github.com:Paraboly/pwc-map.git",
+  "author": "SchemeSonic (https://github.com/schemesonic) <haldun.yildiz@paraboly.com>",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",

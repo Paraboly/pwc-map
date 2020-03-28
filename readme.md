@@ -12,7 +12,8 @@ npm 6+
 
 Add following script to your index.html head section
 
-`<script src='https://unpkg.com/@schemesonic/map@0.0.1/dist/pwcmap.js'></script>`
+`<script type="module" src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.js"></script>`
 
 Configuring the initial setup:
 
