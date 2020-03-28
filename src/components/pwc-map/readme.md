@@ -4,24 +4,28 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
-----------------------------------------------
+| Property | Attribute | Description                                              | Type     | Default     |
+| -------- | --------- | -------------------------------------------------------- | -------- | ----------- |
+| `config` | --        | Map config, currently MapboxGL.JS config                 | `Object` | `undefined` |
+| `map`    | --        | Map reference                                            | `Object` | `undefined` |
+| `type`   | `type`    | Current type is mapbox, later could be extend to leaflet | `string` | `"mapbox"`  |
 
-| Property | Attribute | Description       | Type         | Default     |
-| -------- | --------- | ----------------- | ------------ | ----------- |
-| `map`    | `map`     | Map instance      | `Map`        | `undefined` |
-| `config` | `config`  | Map configuration | `Map.Config` | `undefined` |
+
+## Methods
+
+### `getMap() => Promise<Object>`
 
 
-----------------------------------------------
 
-## Example
+#### Returns
 
-----------------------------------------------
-``` this.state = { map, config };```
+Type: `Promise<Object>`
 
-```<pwc-map map="${this.state.map}" config="${this.state.config}"></pwc-map>```
+
+
 
 ----------------------------------------------
 
