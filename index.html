@@ -5,9 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>@PWC/Map</title>
-  <script type="module" src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.esm.js"></script>
-  <script nomodule src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.js"></script>`
-
 </head>
 
 <body>
@@ -16,6 +13,42 @@
     <pwc-map-geojson-layer></pwc-map-geojson-layer>
     <pwc-map-story></pwc-map-story>
   </pwc-map>
+
+  <script>
+    var metadata = {
+      "country": "Turkey",
+      "province": null,
+      "updatedAt": "2020-03-28 23:05:25",
+      "stats": {
+        "confirmed": 7402,
+        "deaths": 108,
+        "recovered": 70
+      },
+      "coordinates": {
+        "latitude": "38.9637",
+        "longitude": "35.2433"
+      }
+    };
+    var story = {
+      duration: 5000,
+      metadata,
+      target: {
+        center: [38, 42],
+        bearing: 0,
+        zoom: 12,
+        pitch: 0,
+        duration: 4000
+      }
+    }
+    setTimeout(() => {
+      var pwcMapStory = document.querySelector("pwc-map-story");
+
+      pwcMapStory.startStory(story);
+    }, 1000);
+  </script>
+
+  <script type="module" src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.js"></script>`
 
 </body>
 
