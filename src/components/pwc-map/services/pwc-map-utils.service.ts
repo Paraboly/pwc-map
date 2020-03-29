@@ -1,4 +1,4 @@
-export default abstract class PWCMapUtils {
+export default abstract class PwcMapUtils {
   static async getParentFirstLevelMap(element) {
     let map;
     const warning = `Given ${element}: Cannot find pwc-map component.`;

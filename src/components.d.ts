@@ -24,14 +24,15 @@ export namespace Components {
     */
     'type': string;
   }
-  interface PwcMapCorona {
-    'config': any;
-  }
   interface PwcMapGeojsonLayer {
     /**
     * geojson formatted data source to be drawn on map
     */
     'geojson': { type: string; geometry: { type: string; coordinates: number[][][]; }; };
+  }
+  interface PwcMapStory {
+    'config': any;
+    'map': any;
   }
 }
 
@@ -44,21 +45,21 @@ declare global {
     new (): HTMLPwcMapElement;
   };
 
-  interface HTMLPwcMapCoronaElement extends Components.PwcMapCorona, HTMLStencilElement {}
-  var HTMLPwcMapCoronaElement: {
-    prototype: HTMLPwcMapCoronaElement;
-    new (): HTMLPwcMapCoronaElement;
-  };
-
   interface HTMLPwcMapGeojsonLayerElement extends Components.PwcMapGeojsonLayer, HTMLStencilElement {}
   var HTMLPwcMapGeojsonLayerElement: {
     prototype: HTMLPwcMapGeojsonLayerElement;
     new (): HTMLPwcMapGeojsonLayerElement;
   };
+
+  interface HTMLPwcMapStoryElement extends Components.PwcMapStory, HTMLStencilElement {}
+  var HTMLPwcMapStoryElement: {
+    prototype: HTMLPwcMapStoryElement;
+    new (): HTMLPwcMapStoryElement;
+  };
   interface HTMLElementTagNameMap {
     'pwc-map': HTMLPwcMapElement;
-    'pwc-map-corona': HTMLPwcMapCoronaElement;
     'pwc-map-geojson-layer': HTMLPwcMapGeojsonLayerElement;
+    'pwc-map-story': HTMLPwcMapStoryElement;
   }
 }
 
@@ -77,20 +78,21 @@ declare namespace LocalJSX {
     */
     'type'?: string;
   }
-  interface PwcMapCorona {
-    'config'?: any;
-  }
   interface PwcMapGeojsonLayer {
     /**
     * geojson formatted data source to be drawn on map
     */
     'geojson'?: { type: string; geometry: { type: string; coordinates: number[][][]; }; };
   }
+  interface PwcMapStory {
+    'config'?: any;
+    'map'?: any;
+  }
 
   interface IntrinsicElements {
     'pwc-map': PwcMap;
-    'pwc-map-corona': PwcMapCorona;
     'pwc-map-geojson-layer': PwcMapGeojsonLayer;
+    'pwc-map-story': PwcMapStory;
   }
 }
 
@@ -101,8 +103,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pwc-map': LocalJSX.PwcMap & JSXBase.HTMLAttributes<HTMLPwcMapElement>;
-      'pwc-map-corona': LocalJSX.PwcMapCorona & JSXBase.HTMLAttributes<HTMLPwcMapCoronaElement>;
       'pwc-map-geojson-layer': LocalJSX.PwcMapGeojsonLayer & JSXBase.HTMLAttributes<HTMLPwcMapGeojsonLayerElement>;
+      'pwc-map-story': LocalJSX.PwcMapStory & JSXBase.HTMLAttributes<HTMLPwcMapStoryElement>;
     }
   }
 }

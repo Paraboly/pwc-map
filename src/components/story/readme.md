@@ -1,9 +1,6 @@
-# pwc-map-corona
-
-
+# pwc-map-story
 
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,7 +8,6 @@
 | -------- | --------- | ----------- | ----- | ----------- |
 | `config` | `config`  |             | `any` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

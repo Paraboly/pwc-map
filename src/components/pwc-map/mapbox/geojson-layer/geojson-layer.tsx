@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core';
-import PWCMapUtils from '../../services/pwc-map-utils.service';
+import PwcMapUtils from '../../services/pwc-map-utils.service';
 import EXAMPLE_GEOJSON from '../mock/geojson';
 
 @Component({
@@ -18,7 +18,7 @@ export class MapGeojsonLayer {
    */
 
   componentWillLoad() {
-    PWCMapUtils
+    PwcMapUtils
       .getParentFirstLevelMap(this.element)
       .then(this.draw.bind(this));
   }

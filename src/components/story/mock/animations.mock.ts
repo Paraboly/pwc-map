@@ -1,4 +1,4 @@
-const MOCK_ANIMATION_DATA = {
+const MOCK_STORIES = {
   baker: {
     bearing: 27,
     center: [-0.15591514, 51.51830379],
@@ -50,7 +50,10 @@ const MOCK_ANIMATION_DATA = {
   }
 };
 
-export const COVID_19 = JSON.parse(
+const MOCK_COVID19_STORIES = JSON.parse(
   '{"lastChecked":"2020-03-15T16:02:35.908Z","covid19Stats":[{"province":"","country":"Italy","lastUpdate":"2020-03-14T20:13:16","confirmed":21157,"deaths":1441,"recovered":1966}]}'
 );
-export default MOCK_ANIMATION_DATA;
+
+export { MOCK_STORIES, MOCK_COVID19_STORIES };
+
+export default MOCK_STORIES;
