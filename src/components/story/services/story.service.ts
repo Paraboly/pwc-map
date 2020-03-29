@@ -1,5 +1,6 @@
 import OSMService from "../../pwc-map/services/osm.service";
-import { MOCK_COVID19_STORIES, MOCK_STORIES } from "../mock/animations.mock";
+import { MOCK_COVID19_STORIES, MOCK_STORIES } from "../mock/stories.mock";
+import COVID19StoryService from "./covid19-story.service";
 
 export default abstract class PwcMapStoryService {
   static startStoryFeedFromBeginning(map, feed: any, duration = 5000) {
@@ -40,11 +41,15 @@ export default abstract class PwcMapStoryService {
   }
 
   /**
-   * @param query Only `covid` is available for parameter value. Later it should get different story sources
+   * // TODO: Add custom story support
+   * @desc Get stories from different sources according to given query. Only  query='covid' is available for custom sources.
+   * @param query will be used for custom stories
    */
   static getStories(query?: string): Promise<any> {
     if (query && query.includes("covid"))
-      return Promise.resolve(MOCK_COVID19_STORIES);
+      return Promise.resolve(
+        COVID19StoryService.prepareStoriesFromCOVID19(MOCK_COVID19_STORIES)
+      );
     else {
       return Promise.resolve(MOCK_STORIES);
     }

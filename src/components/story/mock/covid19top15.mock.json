@@ -1,0 +1,212 @@
+[
+  {
+    "country": "Italy",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 92472,
+      "deaths": 10023,
+      "recovered": 12384
+    },
+    "coordinates": {
+      "latitude": "41.87194",
+      "longitude": "12.56738"
+    }
+  },
+  {
+    "country": "Spain",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 73235,
+      "deaths": 5982,
+      "recovered": 12285
+    },
+    "coordinates": {
+      "latitude": "40.463667",
+      "longitude": "-3.7492199999999998"
+    }
+  },
+  {
+    "country": "China",
+    "province": "Hubei",
+    "updatedAt": "2020-03-28 01:26:49",
+    "stats": {
+      "confirmed": 67801,
+      "deaths": 3177,
+      "recovered": 62098
+    },
+    "coordinates": {
+      "latitude": "30.9756",
+      "longitude": "112.2707"
+    }
+  },
+  {
+    "country": "Germany",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 57695,
+      "deaths": 433,
+      "recovered": 8481
+    },
+    "coordinates": {
+      "latitude": "51.165690999999995",
+      "longitude": "10.451526"
+    }
+  },
+  {
+    "country": "US",
+    "province": "New York",
+    "updatedAt": "2020-03-28 23:05:37",
+    "stats": {
+      "confirmed": 52410,
+      "deaths": 728,
+      "recovered": 0
+    },
+    "coordinates": {
+      "latitude": "42.60060306",
+      "longitude": "-73.97723916"
+    }
+  },
+  {
+    "country": "France",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 37575,
+      "deaths": 2314,
+      "recovered": 5700
+    },
+    "coordinates": {
+      "latitude": "46.2276",
+      "longitude": "2.2137"
+    }
+  },
+  {
+    "country": "Iran",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 35408,
+      "deaths": 2517,
+      "recovered": 11679
+    },
+    "coordinates": {
+      "latitude": "32.427908",
+      "longitude": "53.68804599999999"
+    }
+  },
+  {
+    "country": "United Kingdom",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 17089,
+      "deaths": 1019,
+      "recovered": 135
+    },
+    "coordinates": {
+      "latitude": "55.3781",
+      "longitude": "-3.4360000000000004"
+    }
+  },
+  {
+    "country": "Switzerland",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 14076,
+      "deaths": 264,
+      "recovered": 1530
+    },
+    "coordinates": {
+      "latitude": "46.8182",
+      "longitude": "8.2275"
+    }
+  },
+  {
+    "country": "US",
+    "province": "New Jersey",
+    "updatedAt": "2020-03-28 23:05:37",
+    "stats": {
+      "confirmed": 11124,
+      "deaths": 140,
+      "recovered": 0
+    },
+    "coordinates": {
+      "latitude": "39.47538693",
+      "longitude": "-74.65848483"
+    }
+  },
+  {
+    "country": "Netherlands",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 9762,
+      "deaths": 639,
+      "recovered": 3
+    },
+    "coordinates": {
+      "latitude": "52.1326",
+      "longitude": "5.2913"
+    }
+  },
+  {
+    "country": "Korea, South",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 9478,
+      "deaths": 144,
+      "recovered": 4811
+    },
+    "coordinates": {
+      "latitude": "35.90775700000001",
+      "longitude": "127.766922"
+    }
+  },
+  {
+    "country": "Belgium",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 9134,
+      "deaths": 353,
+      "recovered": 1063
+    },
+    "coordinates": {
+      "latitude": "50.8333",
+      "longitude": "4.469936"
+    }
+  },
+  {
+    "country": "Austria",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 8271,
+      "deaths": 68,
+      "recovered": 225
+    },
+    "coordinates": {
+      "latitude": "47.5162",
+      "longitude": "14.5501"
+    }
+  },
+  {
+    "country": "Turkey",
+    "province": null,
+    "updatedAt": "2020-03-28 23:05:25",
+    "stats": {
+      "confirmed": 7402,
+      "deaths": 108,
+      "recovered": 70
+    },
+    "coordinates": {
+      "latitude": "38.9637",
+      "longitude": "35.2433"
+    }
+  }
+]

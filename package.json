@@ -37,6 +37,7 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^4.0.2",
     "@stencil/core": "^1.8.11",
     "@types/mapbox-gl": "^1.8.0"
   },
