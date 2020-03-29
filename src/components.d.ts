@@ -15,9 +15,9 @@ export namespace Components {
     * Map config, currently MapboxGL.JS config
     */
     'config': Object;
-    'getMap': () => Promise<Object>;
+    'getMap': () => Promise<any>;
     /**
-    * Map reference
+    * Given map
     */
     'map': Object;
     /**
@@ -30,10 +30,17 @@ export namespace Components {
     * geojson formatted data source to be drawn on map
     */
     'geojson': { type: string; geometry: { type: string; coordinates: number[][][]; }; };
+    /**
+    * Map reference
+    */
+    'map': any;
   }
   interface PwcMapStory {
     'config': any;
     'map': any;
+    'startStory': (story: any) => Promise<void>;
+    'stories'?: any;
+    'story'?: any;
   }
 }
 
@@ -71,9 +78,10 @@ declare namespace LocalJSX {
     */
     'config'?: Object;
     /**
-    * Map reference
+    * Given map
     */
     'map'?: Object;
+    'onMapReady'?: (event: CustomEvent<any>) => void;
     /**
     * Current type is mapbox, later could be extend to leaflet
     */
@@ -84,10 +92,16 @@ declare namespace LocalJSX {
     * geojson formatted data source to be drawn on map
     */
     'geojson'?: { type: string; geometry: { type: string; coordinates: number[][][]; }; };
+    /**
+    * Map reference
+    */
+    'map'?: any;
   }
   interface PwcMapStory {
     'config'?: any;
     'map'?: any;
+    'stories'?: any;
+    'story'?: any;
   }
 
   interface IntrinsicElements {

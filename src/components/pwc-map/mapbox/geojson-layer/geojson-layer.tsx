@@ -16,30 +16,36 @@ export class MapGeojsonLayer {
   /**
    * Map reference
    */
+  @Prop() map;
+  private mapRef: any;
 
   componentWillLoad() {
-    PwcMapUtils
-      .getParentFirstLevelMap(this.element)
-      .then(this.draw.bind(this));
+    if (!this.map) {
+      PwcMapUtils.getParentFirstLevelMap(this.element, ({ map }) => {
+        this.mapRef = map;
+        this.draw();
+      });
+    }
   }
 
-  draw(map) {
-    map.on('load', () => {
-      map.addSource('maine', {
-        type: 'geojson',
-        data: this.geojson
+  draw() {
+    if (this.mapRef)
+      this.mapRef.on('load', () => {
+        this.mapRef.addSource('maine', {
+          type: 'geojson',
+          data: this.geojson
+        });
+        this.mapRef.addLayer({
+          'id': 'maine',
+          'type': 'fill',
+          'source': 'maine',
+          'layout': {},
+          'paint': {
+            'fill-color': '#088',
+            'fill-opacity': 0.8
+          }
+        });
       });
-      map.addLayer({
-        'id': 'maine',
-        'type': 'fill',
-        'source': 'maine',
-        'layout': {},
-        'paint': {
-          'fill-color': '#088',
-          'fill-opacity': 0.8
-        }
-      });
-    });
   }
 
   render() {

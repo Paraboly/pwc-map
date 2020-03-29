@@ -1,6 +1,9 @@
-import { Component, Host, h, Element, Prop } from '@stencil/core';
+declare var mapboxgl: any;
+import { Component, Host, h, Element, Prop, Method } from '@stencil/core';
 import PwcMapUtils from '../pwc-map/services/pwc-map-utils.service';
 import PwcMapStoryService from './services/story.service';
+import OSMService from '../pwc-map/services/osm.service';
+import PwcMapStoryModel from '../../../dist/types/components/story/models/pwc-map-story.model.d';
 @Component({
   tag: 'pwc-map-story',
   styleUrl: 'story.css',
@@ -10,14 +13,20 @@ export class PwcMapStory {
   @Element() private element: HTMLElement;
   @Prop() map;
   @Prop() config;
+  @Prop() stories?: any;
+  @Prop() story?: any;
+  private mapRef: any;
+  private storyMarker: any;
+
+
 
   componentWillLoad() {
-    this.initialize()
-      .then(() => PwcMapStoryService.getStories())
-      .then(this.startStories.bind(this));
+    this.initialize(() => {
+      if (this.story) this.startStory(this.story)
+    });
   }
 
-  async initialize() {
+  async initialize(callback) {
     if (this.config && typeof this.config === "string") {
       try {
         this.config = JSON.parse(this.config);
@@ -26,13 +35,32 @@ export class PwcMapStory {
       }
     }
     if (!this.map) {
-      // TODO: If map is not provided, pwc-map-story component should be first level child of pwc-map (<pwc-map><pwc-map-story></pwc-map-story><pwc-map/>). Should add multi level support
-      return PwcMapUtils.getParentFirstLevelMap(this.element).then(map => this.map = map);
+      PwcMapUtils.getParentFirstLevelMap(this.element, ({ map }) => {
+        this.mapRef = map;
+        callback();
+      });
     }
   }
 
-  startStories(stories: [] | [any]) {
-    PwcMapStoryService.startStoryFeedFromBeginning(this.map, stories);
+  @Method()
+  async startStory(story: PwcMapStoryModel | any) {
+    if (!this.story && !story) {
+      return;
+    }
+
+    this.storyMarker = PwcMapStoryService.addStoryMarker(story.target.center, {
+      fontSize: 40,
+    });
+
+    this.storyMarker.addTo(this.mapRef)
+
+    OSMService.getGeometryByCountryOrCity(story.metadata['country'], story.metadata['province']).then((result) => {
+      const osmBoundingBox: [number, number, number, number] = result['boundingbox'];
+      const southWest = new mapboxgl.LngLat(osmBoundingBox[2], osmBoundingBox[0]);
+      const northEast = new mapboxgl.LngLat(osmBoundingBox[3], osmBoundingBox[1]);
+      const boundingBox = new mapboxgl.LngLatBounds(southWest, northEast);
+      this.mapRef.fitBounds(boundingBox, story.target);
+    });
   }
 
   render() {

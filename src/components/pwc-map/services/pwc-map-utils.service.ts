@@ -1,22 +1,13 @@
 export default abstract class PwcMapUtils {
-  static async getParentFirstLevelMap(element) {
-    let map;
-    const warning = `Given ${element}: Cannot find pwc-map component.`;
+  static getParentFirstLevelMap(element, callback) {
+    if (element.parentElement)
+      element.parentElement.addEventListener("mapReady", function(event) {
+        callback(event.detail);
+      });
+  }
 
-    if (element.parentElement.localName === "pwc-map") {
-      return (element.parentElement as any)
-        .getMap()
-        .then(parentMap => (map = parentMap))
-        .finally(() => {
-          if (!map) {
-            console.warn(warning);
-            return Promise.reject({ warning });
-          } else {
-            return map;
-          }
-        });
-    } else {
-      return Promise.reject({ warning });
-    }
+  static randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }

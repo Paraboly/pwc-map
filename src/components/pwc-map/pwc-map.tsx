@@ -1,4 +1,4 @@
-import { Element, Component, Prop, h, Method } from "@stencil/core";
+import { Element, Component, Prop, h, Method, Event, EventEmitter } from "@stencil/core";
 import MapboxService from "./mapbox/mapbox.service";
 
 @Component({
@@ -6,6 +6,11 @@ import MapboxService from "./mapbox/mapbox.service";
   styleUrls: ["./pwc-map.css"]
 })
 export class Map {
+  /**
+   * Map reference
+   */
+  mapRef: any;
+  @Event() mapReady: EventEmitter;
   @Element() private element: HTMLElement;
   /**
    * Current type is mapbox, later could be extend to leaflet
@@ -13,7 +18,7 @@ export class Map {
   @Prop() type = "mapbox";
 
   /**
-   * Map reference
+   * Given map
    */
   @Prop() map: Object;
   /**
@@ -23,18 +28,15 @@ export class Map {
   @Method()
   async getMap() {
     if (!this.map) {
-      console.warn("Map is not initialized, cannot get map");
       return;
     }
-
-    return this.map;
+    this.mapRef = this.map;
+    return this.mapRef;
   }
 
-  componentWillLoad() {
-
-  }
   componentDidLoad() {
-    this.map = MapboxService.getOne({ container: this.element }, "BUILDING");
+    this.mapRef = MapboxService.getOne({ container: this.element }, "BUILDING");
+    this.mapRef.on('style.load', () => this.mapReady.emit({ map: this.mapRef }));
   }
 
   render() {
