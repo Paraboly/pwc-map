@@ -6,10 +6,10 @@ export const config: Config = {
   namespace: "PwcMap",
   preamble: "@paraboly Web Component",
   outputTargets: [
-    reactOutputTarget({
-      componentCorePackage: "PwcMap",
-      proxiesFile: "./src/components.ts",
-    }),
+    // reactOutputTarget({
+    //   componentCorePackage: "@paraboly/pwc-map",
+    //   proxiesFile: "./src/components.ts",
+    // }),
     {
       type: "dist",
       esmLoaderPath: "../loader",
