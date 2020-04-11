@@ -1,7 +1,7 @@
-export default abstract class OSMService {
+export default abstract class OsmService {
   static search(query) {
     const url = `https://nominatim.openstreetmap.org/search?q=${query}&format=json`;
-    return fetch(url, { mode: "cors" }).then(res => res.json());
+    return fetch(url, { mode: "cors" }).then((res) => res.json());
   }
 
   /**
@@ -13,6 +13,6 @@ export default abstract class OSMService {
       city ? "&city=" + (city || "") + "," : ""
     }`;
 
-    return OSMService.search(`${query}${filters}`).then(places => places[0]);
+    return OsmService.search(`${query}${filters}`).then((places) => places[0]);
   }
 }

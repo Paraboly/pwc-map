@@ -1,13 +1,12 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core';
-import PwcMapUtils from '../../services/pwc-map-utils.service';
-import EXAMPLE_GEOJSON from '../mock/geojson';
+import PwcMapUtils from '../PwcMap/services/PwcMapUtils';
+import EXAMPLE_GEOJSON from '../core/mapbox/mock/geojson';
 
 @Component({
   tag: 'pwc-map-geojson-layer',
-  styleUrl: 'geojson-layer.css',
   shadow: true
 })
-export class MapGeojsonLayer {
+export class PwcMapGeojsonLayer {
   @Element() private element: HTMLElement;
   /**
    * geojson formatted data source to be drawn on map

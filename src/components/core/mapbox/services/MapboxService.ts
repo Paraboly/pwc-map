@@ -1,4 +1,4 @@
-import MAP_BOX_CONSTANTS from "./mapbox.constant";
+import MAP_BOX_CONSTANTS from "../constants/mapbox.constant";
 declare var mapboxgl: any;
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2NoZW1lc29uaWMiLCJhIjoiY2swY3lxOWhqMDJpcTNjb2NoOGhjZncyZSJ9.lvVwLocCAkKFm3zAei5seA";
@@ -12,7 +12,7 @@ export default class MapboxService {
       zoom = 1,
       pitch = 45,
       bearing = 0,
-      antialias = true
+      antialias = true,
     },
     layer = "BUILDING"
   ) {
@@ -23,7 +23,7 @@ export default class MapboxService {
       zoom,
       pitch,
       bearing,
-      antialias
+      antialias,
     });
 
     if (layer && MAP_BOX_CONSTANTS.LAYERS[layer]) {

@@ -1,6 +1,4 @@
-# pwc-map-geojson-layer
-
-
+# PwcMap-geojson-layer
 
 <!-- Auto Generated Below -->
 

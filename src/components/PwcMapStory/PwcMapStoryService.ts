@@ -1,6 +1,6 @@
 declare var mapboxgl: any;
-// import PwcMapStoryModel from "../models/pwc-map-story.model";
-import PwcMapUtils from "../../pwc-map/services/pwc-map-utils.service";
+// import PwcMapStoryModel from "../models/PwcMapStory.model";
+import PwcMapUtils from "../PwcMap/services/PwcMapUtils";
 
 export default abstract class PwcMapStoryService {
   static addStoryMarker(coords, options) {
@@ -9,7 +9,7 @@ export default abstract class PwcMapStoryService {
     el.innerText = "🎯";
     el.style.fontSize = options.fontSize + "px";
 
-    el.addEventListener("click", function() {
+    el.addEventListener("click", function () {
       window.alert(options.message);
     });
 
@@ -48,7 +48,7 @@ export default abstract class PwcMapStoryService {
       //bearing: PwcMapUtils.randomIntFromInterval(0, 180),
       zoom: 6, //PwcMapUtils.randomIntFromInterval(5, 10),
       pitch: PwcMapUtils.randomIntFromInterval(0, 10),
-      duration: PwcMapUtils.randomIntFromInterval(5000, 10000)
+      duration: PwcMapUtils.randomIntFromInterval(5000, 10000),
     };
   }
 

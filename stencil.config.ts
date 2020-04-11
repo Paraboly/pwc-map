@@ -1,23 +1,28 @@
 import { Config } from "@stencil/core";
+import { reactOutputTarget } from "@stencil/react-output-target";
 import json from "@rollup/plugin-json";
 
 export const config: Config = {
-  namespace: "pwc-map",
-  preamble: "dev@paraboly Web Component",
+  namespace: "PwcMap",
+  preamble: "@paraboly Web Component",
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: "PwcMap",
+      proxiesFile: "./src/components.ts",
+    }),
     {
       type: "dist",
-      esmLoaderPath: "../loader"
+      esmLoaderPath: "../loader",
     },
 
     {
-      type: "docs-readme"
+      type: "docs-readme",
     },
     {
       type: "www",
       copy: [{ src: "components/*/*.json", dest: "build" }],
-      serviceWorker: null // disable service workers
-    }
+      serviceWorker: null, // disable service workers
+    },
   ],
   plugins: [
     json({
@@ -37,7 +42,7 @@ export const config: Config = {
       compact: true, // Default: false
 
       // generate a named export for every property of the JSON object
-      namedExports: true // Default: true
-    })
-  ]
+      namedExports: true, // Default: true
+    }),
+  ],
 };

@@ -1,12 +1,11 @@
 declare var mapboxgl: any;
 import { Component, Host, h, Element, Prop, Method } from '@stencil/core';
-import PwcMapUtils from '../pwc-map/services/pwc-map-utils.service';
-import PwcMapStoryService from './services/story.service';
-import OSMService from '../pwc-map/services/osm.service';
-import PwcMapStoryModel from '../../../dist/types/components/story/models/pwc-map-story.model.d';
+import PwcMapUtils from '../PwcMap/services/PwcMapUtils';
+import PwcMapStoryService from './PwcMapStoryService';
+import OSMService from '../core/osm/OsmService';
+import PwcMapStoryModel from './PwcMapStoryModel';
 @Component({
   tag: 'pwc-map-story',
-  styleUrl: 'story.css',
   shadow: true
 })
 export class PwcMapStory {

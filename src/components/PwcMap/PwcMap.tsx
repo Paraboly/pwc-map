@@ -1,11 +1,11 @@
 import { Element, Component, Prop, h, Method, Event, EventEmitter } from "@stencil/core";
-import MapboxService from "./mapbox/mapbox.service";
+import MapboxService from "../core/mapbox/services/MapboxService";
 
 @Component({
   tag: "pwc-map",
-  styleUrls: ["./pwc-map.css"]
+  styleUrls: ["./PwcMap.css"]
 })
-export class Map {
+export class PwcMap {
   /**
    * Map reference
    */

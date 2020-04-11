@@ -12,8 +12,9 @@ npm 6+
 
 Add following script to your index.html head section
 
-`<script type="module" src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.esm.js"></script>
-  <script nomodule src="https://unpkg.com/@paraboly/pwc-map@latest/dist/pwc-map/pwc-map.js"></script>`
+`<script type="module" src="https://unpkg.com/@paraboly/PwcMap@latest/dist/PwcMap/PwcMap.esm.js"></script>
+
+  <script nomodule src="https://unpkg.com/@paraboly/PwcMap@latest/dist/PwcMap/PwcMap.js"></script>`
 
 Configuring the initial setup:
 
@@ -26,7 +27,7 @@ this.state =
 
 and finally use it in your html.
 
-`<pwc-map map="${this.state.map}" config="${this.state.config}"></pwc-map>`
+`<PwcMap map="${this.state.map}" config="${this.state.config}"></PwcMap>`
 
 ## Running the tests
 
@@ -40,7 +41,7 @@ and finally use it in your html.
 
 - _SchemeSonic_ - [github](https://github.com/schemesonic)
 
-See also the list of [contributors](https://github.com/paraboly/@pwc-map/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/paraboly/@PwcMap/contributors) who participated in this project.
 
 ## License
 

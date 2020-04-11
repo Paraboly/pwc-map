@@ -1,4 +1,4 @@
-# pwc-map-story
+# PwcMapStory
 
 <!-- Auto Generated Below -->
 
